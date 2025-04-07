@@ -161,8 +161,11 @@ Configures Nginx's [`log_format`](http://nginx.org/en/docs/http/ngx_http_log_mod
 
     nginx_service_state: started
     nginx_service_enabled: yes
+    nginx_service_management: true
 
 By default, this role will ensure Nginx is running and enabled at boot after Nginx is configured. You can use these variables to override this behavior if installing in a container or further control over the service state is required.
+
+You can use the `nginx_service_management` to disable all service operations by setting it to `false`. This is specially useful on certain docker scenarios where ansible can't figure out the service status and errors out.
 
 ## Overriding configuration templates
 
